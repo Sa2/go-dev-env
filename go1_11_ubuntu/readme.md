@@ -3,7 +3,7 @@
 ## Build image
 
 ```
-docker build -t go-dev:go1.11-ubuntu ./
+docker build -t go-dev-env:go1.11-ubuntu ./
 ```
 
 ## Run container
@@ -13,7 +13,7 @@ $GOPATH/binの中身はコンパイル済みのバイナリであるが故に、
 ゲストコンテナでコンパイルしたものはホスト側では実行できない。
 
 ```
-docker run -it -v <host $GOPATH/src>:/root/go/src --name go1_11-ubuntu -p 8080:8080 go-dev:go1.11-ubuntu
+docker run -it -v <host $GOPATH/src>:/root/go/src --name go1_11-ubuntu -p 8080:8080 go-dev-env:go1.11-ubuntu
 ```
 
 GOPATHは以下のコマンドで調べられる。
